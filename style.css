@@ -1,0 +1,22 @@
+html, body {
+    margin: 0px;
+    height: 100%;
+    background-color: #E5E5E5;
+}
+
+header {
+    padding: 1.3em 0 1em 2em;
+}
+
+#logo {
+    margin-left: 2em;
+}
+
+main{
+    height: 70%;
+}
+
+footer {
+    text-align: center;
+    padding: 2em 0;
+}
