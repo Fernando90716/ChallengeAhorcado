@@ -25,24 +25,32 @@ main{
 }
 
 #iniciar-juego {
-    padding: 25px;
-    width: 315px;
+    margin-bottom: 1em;
+    font-size: 18px;
+    font-family: 'Inter';
+    font-style: normal;
+    width: 30%;
     height: 115px;
     background: #0A3871;
     border-radius: 25px;
     color: #E5E5E5;
     font-weight: bold;
+    border-style: solid;
     border-color: #0A3871;
 }
 
 #agregar-palabra {
-    width: 235px;
-    height: 115px;
+    margin-top: 1em;
+    font-size: 18px;
     font-family: 'Inter';
     font-style: normal;
     font-weight: bold;
+    width: 23%;
+    height: 115px;
     border-radius: 25px;
     color: #0A3871;
+    background-color: #E5E5E5;
+    border-style: solid;
     border-color: #0A3871;
 }
 
