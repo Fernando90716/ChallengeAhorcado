@@ -4,6 +4,16 @@ html, body {
     background-color: #E5E5E5;
 }
 
+::-webkit-scrollbar{
+    background-color: #E9ECF8;
+    width: 0.5em;
+}
+
+::-webkit-scrollbar-thumb{
+    background-color: #597C9B;
+    border-radius: 22px;
+}
+
 header {
     padding: 1.3em 0 1em 2em;
 }
@@ -83,6 +93,7 @@ main{
 
 #objetoOcultoJuego {
     display: none;
+    height: 100%;
 }
 
 footer {
@@ -92,8 +103,72 @@ footer {
 
 /*pagina del juego*/
 
+
+#grafica-dibujo {
+    height: 50%;
+}
+
+#puntos {
+    height: 30%;
+}
+
 #botones-opciones {
     justify-content: center;
     display: flex;
     align-items: center;
+    height: 10%;
+}
+
+#retroceder {
+    margin-right: 1.5em;
+    font-size: 18px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: bold;
+    width: 25%;
+    height: 90px;
+    border-radius: 25px;
+    color: #0A3871;
+    background-color: #E5E5E5;
+    border-style: solid;
+    border-color: #0A3871;
+    cursor: pointer;
+    transition: 0.4s transform;
+    transition: 100ms border-color background-color;
+}
+
+#retroceder:hover{
+    transform: scale(1.05);
+}
+
+#retroceder:active {
+    background-color: #597C9B;
+    border-color: rgb(10, 20, 113);
+}
+
+#nuevo-juego {
+    margin-left: 1.5em;
+    font-size: 18px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: bold;
+    width: 25%;
+    height: 90px;
+    border-radius: 25px;
+    color: #E5E5E5;
+    background-color: #0A3871;
+    border-style: solid;
+    border-color: #0A3871;
+    cursor: pointer;
+    transition: 0.4s transform;
+    transition: 100ms border-color background-color;
+}
+
+#nuevo-juego:hover{
+    transform: scale(1.05);
+}
+
+#nuevo-juego:active {
+    background-color: rgb(10, 20, 113);
+    border-color: rgb(10, 20, 113);
 }
