@@ -103,13 +103,125 @@ footer {
 
 /*pagina del juego*/
 
-
 #grafica-dibujo {
-    height: 50%;
+    height: 70%;
+    justify-content: center;
+    align-items: end;
+    display: block;
+    position: relative;
 }
 
-#puntos {
-    height: 30%;
+.base {
+    width: 30%;
+    border: 3px solid #0A3871;
+    background-color: #0A3871;
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: calc(50% - 15%);
+}
+
+.soporte {
+    width: 0;
+    height: 85%;
+    border: 3px solid #0A3871;
+    background-color: #0A3871;
+    display: block;
+    position: absolute;
+    bottom: 6px;
+    left: calc(50% - 7.5%);
+}
+
+.viga {
+    width: 15%;
+    height: 0;
+    border: 3px solid #0A3871;
+    background-color: #0A3871;
+    display: block;
+    position: absolute;
+    bottom: calc(6px + 85%);
+    left: calc(50% - 7.5%);
+}
+
+.soga {
+    width: 0;
+    height: calc(15% - 8px);
+    border: 3px solid #0A3871;
+    background-color: #0A3871;
+    display: block;
+    position: absolute;
+    bottom: calc(70% + 8px);
+    left: calc(50% + 7.5%);
+}
+
+.cabeza {
+    width: 5%; /*La cabeza me salió ovalada devido a que el monitor es rectangular, si fuera cuadrada seria un circulo perfecto*/
+    height: 15%;
+    border: 3px solid #0A3871;
+    display: block;
+    border-radius: 50%;
+    position: absolute;
+    left: calc(57.5% - 2.5%);
+    bottom: calc(70% - 15% + 3px);
+}
+
+.torso {
+    width: 5px;
+    height: 20%;
+    border: 3px solid #0A3871;
+    background-color: #0A3871;
+    display: block;
+    position: absolute;
+    bottom: 35%;
+    left: calc(57.5% - 2.5px);
+}
+
+.brazo-izquierdo {
+    height: 13%;
+    border: 3px solid #0A3871;
+    background-color: #0A3871;
+    display: block;
+    position: absolute;
+    left: 56.5%;
+    bottom: 41%;
+    transform: rotate(25deg);
+}
+
+.brazo-derecho {
+    height: 13%;
+    border: 3px solid #0A3871;
+    background-color: #0A3871;
+    display: block;
+    position: absolute;
+    left: 58.5%;
+    bottom: 41%;
+    transform: rotate(-25deg);
+}
+
+.pierna-derecha {
+    height: 15%;
+    border: 3px solid #0A3871;
+    background-color: #0A3871;
+    display: block;
+    position: absolute;
+    left: 58.5%;
+    bottom: 21%;
+    transform: rotate(-25deg);
+}
+
+.pierna-izquierda {
+    height: 15%;
+    border: 3px solid #0A3871;
+    background-color: #0A3871;
+    display: block;
+    position: absolute;
+    left: 56.5%;
+    bottom: 21%;
+    transform: rotate(25deg);
+}
+
+#caja-resultado {
+    height: 20%;
 }
 
 #botones-opciones {
