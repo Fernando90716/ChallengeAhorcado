@@ -98,7 +98,7 @@ main{
 
 footer {
     text-align: center;
-    padding: 2em 0;
+    padding: 4em 0 1em 0;
 }
 
 /*pagina del juego*/
@@ -155,10 +155,10 @@ footer {
 }
 
 #cabeza {
-    width: 5%; /*La cabeza me salió ovalada devido a que el monitor es rectangular, si fuera cuadrada seria un circulo perfecto*/
+    width: calc(15% / 3.304); /*La cabeza me salió ovalada devido a que el monitor es rectangular, si fuera cuadrada seria un circulo perfecto*/
     height: 15%;
     border: 3px solid #0A3871;
-    display: none;
+    display: block;
     border-radius: 50%;
     position: absolute;
     left: calc(57.5% - 2.5%);
