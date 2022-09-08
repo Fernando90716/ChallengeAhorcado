@@ -330,15 +330,19 @@ footer {
     border-radius: 15px;
     resize: none;
     font-size: 1.5em;
-    color: darkblue;
-    border: darkblue solid;
+    color: #0A3871;
+    border: #0A3871 solid;
     padding: 0.5em;
     border-width: 2px;
     display: inline;
 }
 
 #escribirPalabra:active{
-    border: darkblue solid;
+    border: #0A3871 solid;
+}
+#escribirPalabra:focus-visible{
+    border: #0A3871 solid;
+    border-width: 5px;
 }
 
 .espacio-botones {
