@@ -15,12 +15,12 @@
         </a>
     </header>
     <main>
-        <div class="botones-juego" id="objetoOculto1">
+        <div class="botones-juego" id="menuPrincipal">
             <input type="button" value="Empezar juego" id="empezar-juego" onclick="empezarJuego()">
-            <input type="button" value="Agregar nueva palabra" id="agregar-palabra" onclick="agregarPalabra()">
+            <input type="button" value="Agregar nueva palabra" id="menuPalabra" onclick="espacioOculto3()">
         </div>
 
-        <div class="juego" id="objetoOcultoJuego">
+        <div class="juego" id="objetoOculto2">
             <div id="grafica-dibujo">
                 <div id="soporte"></div>
                 <div id="base"></div>
@@ -34,18 +34,27 @@
                 <div id="pierna-izquierda"></div>
             </div>
 
-            <div id="caja-resultado">
-                <div id="intentos-acertados">
+            <div id="letras-acertadas">
+                <div id="aciertos"></div>
+            </div>
 
-                </div>
-                <div id="intentos-fallidos">
-
-                </div>
+            <div id="intentos-fallidos">
+                <div id="fallos"></div>
             </div>
 
             <div id="botones-opciones">
                 <input type="button" value="Volver atras" id="retroceder" onclick="pantallaInicio()">
                 <input type="button" value="Empezar otro juego" id="nuevo-juego" onclick="reiniciar()">
+            </div>
+        </div>
+
+        <div id="espacioOculto3">
+            <div id="menuNuevaPalabra">
+                <input type="text" placeholder="Escribe una palabra para añadir" id="escribirPalabra">
+                <div class="espacio-botones">
+                    <input type="submit" value="Enviar" onclick="sumarPalabra()" id="botonEnviar">
+                    <input type="button" value="Volver atras" id="retroceder2" onclick="pantallaInicio()">
+                </div>
             </div>
         </div>
     </main>
