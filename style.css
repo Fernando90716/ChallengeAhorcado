@@ -340,6 +340,7 @@ footer {
 #escribirPalabra:active{
     border: #0A3871 solid;
 }
+
 #escribirPalabra:focus-visible{
     border: #0A3871 solid;
     border-width: 5px;

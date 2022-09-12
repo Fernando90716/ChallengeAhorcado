@@ -1,8 +1,19 @@
-var palabrasJuego = ["hola", "nube", "gato", "perro", "cama"];
+var palabrasJuego = ["hola", "nube", "gato", "perro", "cama", "blanco", "negro", "azul"];
 var aciertos = 0;
 var fallos = 0;
-var nuevaPalabra = document.getElementById("escribirPalabra");
 
+const palabraNueva = document.getElementById("escribirPalabra");
+
+
+function sumarPalabra() {
+    insertarPalabraArray(palabraNueva.value);
+    palabraNueva.value = "";
+    palabraNueva.focus();
+}
+
+function insertarPalabraArray(palabra) {
+    palabrasJuego.push(palabra);
+}
 
 function palabraRandom() {
     
@@ -33,9 +44,6 @@ function iniciarJuego()
     console.log("Hola");
 }
 
-function sumarPalabra(palabrita) {
-    palabrasJuego.push(palabrita);
-}
 
 function reiniciar()
 {
