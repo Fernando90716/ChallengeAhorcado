@@ -53,6 +53,7 @@ function pantallaInicio()
     document.getElementById("espacioOculto3").style.display = "none"
 }
 
+/*numeros de identificacion 65 a 90 y */
 function keyFunction(event)
 {
 	let spans = document.querySelectorAll("#spanLetras");
@@ -87,6 +88,55 @@ function keyFunction(event)
 			palabrasEquivocadas.appendChild(palabraEquivocadaDisplay);
 			fallos++;
 			let imagen = document.getElementById("graficaDibujo");
+		}
+
+		switch (fallos) {
+			case 1:
+				console.log("fallaste")
+				document.getElementById("soporte").style.visibility = "visible";
+				break;
+
+			case 2:
+				console.log("fallaste 2")
+				document.getElementById("viga").style.visibility = "visible";
+				break;
+
+			case 3:
+				console.log("fallaste3")
+				document.getElementById("soga").style.visibility = "visible";
+				break;
+
+			case 4:
+				console.log("fallaste4")
+				document.getElementById("cabeza").style.visibility = "visible";
+				break;
+				
+			case 5:
+				console.log("fallaste5")
+				document.getElementById("torso").style.visibility = "visible";
+				break;
+
+			case 6:
+				console.log("fallaste6")
+				document.getElementById("brazo-derecho").style.visibility = "visible";
+				break;
+			
+			case 7:
+				console.log("fallaste7")
+				document.getElementById("brazo-izquierdo").style.visibility = "visible";
+				break;
+			case 8:
+				console.log("fallaste8")
+				document.getElementById("pierna-derecha").style.visibility = "visible";
+				break;
+
+			case 9:
+				console.log("fallaste9")
+				document.getElementById("pierna-izquierda").style.visibility = "visible";
+				break;
+
+			default:
+				break;
 		}
 
 		if(fallos === 9){
@@ -127,6 +177,15 @@ function reiniciar()
 	drawLines(recibePalabra);
 	window.addEventListener('keydown', keyFunction);
     console.log(recibePalabra);
+	document.getElementById("soporte").style.visibility = "collapse";
+	document.getElementById("viga").style.visibility = "collapse";
+	document.getElementById("cabeza").style.visibility = "collapse";
+	document.getElementById("soga").style.visibility = "collapse";
+	document.getElementById("torso").style.visibility = "collapse";
+	document.getElementById("brazo-derecho").style.visibility = "collapse";
+	document.getElementById("brazo-izquierdo").style.visibility = "collapse";
+	document.getElementById("pierna-derecha").style.visibility = "collapse";
+	document.getElementById("pierna-izquierda").style.visibility = "collapse";
 }
 
 
@@ -142,4 +201,4 @@ function drawLines(palabra)
 	});
 }
 
-/*numeros de identificacion 65 a 90 y */
+
