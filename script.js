@@ -14,15 +14,7 @@ const palabraNueva = document.getElementById("escribirPalabra");
 
 var palabrita;
 
-function iniciarJuego() 
-{   
-	reiniciar();
-    let recibePalabra = palabraObtenida(numeroAleatorio());
-	drawLines(recibePalabra);
-	window.addEventListener("keydown", funcionTeclado);
-}
-
-function reiniciar()
+function iniciarJuego()
 {
 	aciertos = 0;
 	fallos = 0;
@@ -78,13 +70,14 @@ function empezarJuego()
     document.getElementById("menuPrincipal").style.display = "none";
 	document.getElementById("menuNuevaPalabra").style.display = "none";
     document.getElementById("menuJuego").style.display = "block";
-    iniciarJuego() ;
+    iniciarJuego();
 }
 
 function menuNuevaPalabra() 
 {
     document.getElementById("menuPrincipal").style.display = "none";
     document.getElementById("menuNuevaPalabra").style.display = "block";
+	palabraNueva.focus();
 }
 
 function pantallaInicio()
@@ -210,3 +203,11 @@ function drawLines(palabra)
 		letrasAcertadas.appendChild(palabraDisplay);
 	});
 }
+
+palabraNueva.addEventListener("keydown", function(event) 
+{
+        if (event.code === "Enter")
+        {
+            sumarPalabra();
+        }
+});
