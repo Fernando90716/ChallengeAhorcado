@@ -16,6 +16,7 @@ var palabrita;
 
 function iniciarJuego() 
 {   
+	reiniciar();
     let recibePalabra = palabraObtenida(numeroAleatorio());
 	drawLines(recibePalabra);
 	window.addEventListener("keydown", funcionTeclado);
