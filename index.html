@@ -17,10 +17,10 @@
     <main>
         <div class="botones-juego" id="menuPrincipal">
             <input type="button" value="Empezar juego" id="empezar-juego" onclick="empezarJuego()">
-            <input type="button" value="Agregar nueva palabra" id="menuPalabra" onclick="espacioOculto3()">
+            <input type="button" value="Agregar nueva palabra" id="menuPalabra" onclick="menuNuevaPalabra()">
         </div>
 
-        <div class="juego" id="objetoOculto2">
+        <div class="juego" id="menuJuego">
             <div id="graficaDibujo">
                 <div id="base"></div>
                 <div id="soporte"></div>
@@ -32,13 +32,25 @@
                 <div id="brazo-izquierdo"></div>
                 <div id="pierna-derecha"></div>
                 <div id="pierna-izquierda"></div>
+                <div id="areaMensajes">
+                    <div id="mensajeGanador" style="visibility:collapse;">
+                        Has ganado, <br>felicidades
+                    </div>
+                    <div id="mensajeDeDerrota" style="visibility:collapse;">
+                        Se acabo el juego,<br>
+                         la palabra era:
+                         <div id="palabraFinal">
+                            
+                         </div>
+                    </div>
+                </div>
             </div>
 
             <div id="letrasAcertadas">
                 
             </div>
 
-            <div id="palabrasEquivocadas">
+            <div id="palabrasErradas">
                 
             </div>
 
@@ -48,8 +60,8 @@
             </div>
         </div>
 
-        <div id="espacioOculto3">
-            <div id="menuNuevaPalabra">
+        <div id="menuNuevaPalabra">
+            <div id="nuevaPalabra">
                 <input type="text" placeholder="Escribe una palabra para añadir" id="escribirPalabra">
                 <div class="espacio-botones">
                     <input type="submit" value="Enviar" onclick="sumarPalabra()" id="botonEnviar">

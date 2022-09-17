@@ -100,7 +100,7 @@ footer {
 
 /*pagina del juego*/
 
-#objetoOculto2 {
+#menuJuego {
     display: none;
     height: 70%;
     text-align: center;
@@ -223,6 +223,15 @@ footer {
     transform: rotate(25deg);
 }
 
+#areaMensajes {
+    position: absolute;
+    right: 18%;
+    bottom: 30%;
+    font-weight: bold;
+    color: #0A3871;
+    font-size: 22px;
+}
+
 /*Fin del dibujo*/
 
 #letrasAcertadas {
@@ -249,7 +258,7 @@ footer {
     
 }
 
-#palabrasEquivocadas {
+#palabrasErradas {
     visibility: visible;
     display: block;
     text-align: center;
@@ -324,12 +333,12 @@ footer {
 
 /*Nueva palabra*/
 
-#espacioOculto3 {
+#menuNuevaPalabra {
     display: none;
     height: 100%;
 }
 
-#menuNuevaPalabra{
+#nuevaPalabra{
     height: 80%;
     display: flex;
     flex-direction: column;

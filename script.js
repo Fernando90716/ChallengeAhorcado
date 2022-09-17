@@ -1,29 +1,68 @@
-const palabrasJuego = ["HOLA", "NUBE", "GATO", "PERRO", "CAMA", "BLANCO", "NEGRO", "AZUL","JAVA","SCRIPT","HTML","XBOX","WINDOWS","ALURA","FRONTEND","BACKEND","INTEL","AHORCADO","SECURITY"];
+const palabrasJuego = ["HOLA", "NUBE", "GATO", "PERRO", "CAMA", "BLANCO", "NEGRO", "AZUL","JAVA","SCRIPT","HTML","XBOX","WINDOWS","AHORCADO"];
+
+var mensajeGanador = document.getElementById("mensajeGanador");
+var mensajeDeDerrota = document.getElementById("mensajeDeDerrota");
 
 var aciertos = 0;
 var fallos = 0;
 var letrasIngresadas = [];
 
 var letrasAcertadas = document.getElementById("letrasAcertadas");
-var palabrasEquivocadas = document.getElementById("palabrasEquivocadas");
+var palabrasErradas = document.getElementById("palabrasErradas");
 
 const palabraNueva = document.getElementById("escribirPalabra");
 
 var palabrita;
 
-function numeroAleatorio() {
-    var numberRandom = Math.floor(Math.random() * palabrasJuego.length);
-    return numberRandom;
+function iniciarJuego() 
+{   
+    let recibePalabra = palabraObtenida(numeroAleatorio());
+	drawLines(recibePalabra);
+	window.addEventListener("keydown", funcionTeclado);
 }
 
-function palabraObtenida(numberRandom)
+function reiniciar()
 {
-    var numeroAleatorio = numberRandom;
+	aciertos = 0;
+	fallos = 0;
+	mensajeGanador.style.visibility = "collapse";
+	mensajeDeDerrota.style.visibility = "collapse";
+	letrasIngresadas = [];
+	graficaDibujo.style.visibility = "visible";
+	letrasAcertadas.style.visibility = "visible";
+	palabrasErradas.style.visibility = "visible";
+	letrasAcertadas.innerHTML = "";
+	palabrasErradas.innerHTML = "";
+	let recibePalabra = palabraObtenida(numeroAleatorio());
+	drawLines(recibePalabra);
+	window.addEventListener("keydown", funcionTeclado);
+
+	document.getElementById("soporte").style.visibility = "collapse";
+	document.getElementById("viga").style.visibility = "collapse";
+	document.getElementById("cabeza").style.visibility = "collapse";
+	document.getElementById("soga").style.visibility = "collapse";
+	document.getElementById("torso").style.visibility = "collapse";
+	document.getElementById("brazo-derecho").style.visibility = "collapse";
+	document.getElementById("brazo-izquierdo").style.visibility = "collapse";
+	document.getElementById("pierna-derecha").style.visibility = "collapse";
+	document.getElementById("pierna-izquierda").style.visibility = "collapse";
+}
+
+function numeroAleatorio() 
+{
+    var randomNumber = Math.floor(Math.random() * palabrasJuego.length);
+    return randomNumber;
+}
+
+function palabraObtenida(randomNumber)
+{
+    var numeroAleatorio = randomNumber;
     var palabra = palabrasJuego[numeroAleatorio];
     return palabra;
 }
 
-function sumarPalabra() {
+function sumarPalabra() 
+{
     insertarPalabraArray(palabraNueva.value.toUpperCase());
     palabraNueva.value = "";
     palabraNueva.focus();
@@ -36,58 +75,61 @@ function insertarPalabraArray(palabra) {
 function empezarJuego()
 {
     document.getElementById("menuPrincipal").style.display = "none";
-    document.getElementById("objetoOculto2").style.display = "block";
+	document.getElementById("menuNuevaPalabra").style.display = "none";
+    document.getElementById("menuJuego").style.display = "block";
     iniciarJuego() ;
 }
 
-function espacioOculto3() 
+function menuNuevaPalabra() 
 {
     document.getElementById("menuPrincipal").style.display = "none";
-    document.getElementById("espacioOculto3").style.display = "block";
+    document.getElementById("menuNuevaPalabra").style.display = "block";
 }
 
 function pantallaInicio()
 {
     document.getElementById("menuPrincipal").style.display = "flex"
-    document.getElementById("objetoOculto2").style.display = "none"
-    document.getElementById("espacioOculto3").style.display = "none"
+    document.getElementById("menuJuego").style.display = "none"
+    document.getElementById("menuNuevaPalabra").style.display = "none"
 }
 
 /*numeros de identificacion 65 a 90 y */
-function keyFunction(event)
+function funcionTeclado(event)
 {
-	let spans = document.querySelectorAll("#spanLetras");
-	let recibeTecla = event.key;
+	let spans = document.querySelectorAll("#span");
+	let teclaEvento = event.key;
 	let recibeCodigoTecla = event.keyCode;
-	let letraMayus = recibeTecla.toUpperCase();
+	let conversorMayuscula = teclaEvento.toUpperCase();
 
 	if(recibeCodigoTecla >=65 && recibeCodigoTecla <= 90)
 	{
-		if(letrasIngresadas.includes(letraMayus))
+		if(letrasIngresadas.includes(conversorMayuscula))
 		{
 			return null;
 		}
+
 		else
 		{
-			letrasIngresadas.push(letraMayus);
+			letrasIngresadas.push(conversorMayuscula);
 		}
 
 		let acerto = false; 
-		for(let i = 0; i < palabrita.length; i++)
+
+		for(let index = 0; index < palabrita.length; index++)
 		{
-			if(letraMayus == palabrita[i]){
-				spans[i].innerHTML = letraMayus;
+			if(conversorMayuscula == palabrita[index]){
+				spans[index].innerHTML = conversorMayuscula;
 				acerto = true; 
 				aciertos++;
 			}
 		}
+
 		if(acerto == false ){
 			let palabraEquivocadaDisplay = document.createElement("span");
 			palabraEquivocadaDisplay.classList.add("fallos");
-			palabraEquivocadaDisplay.innerHTML = letraMayus;
-			palabrasEquivocadas.appendChild(palabraEquivocadaDisplay);
+			palabraEquivocadaDisplay.innerHTML = conversorMayuscula;
+			palabrasErradas.appendChild(palabraEquivocadaDisplay);
 			fallos++;
-			let imagen = document.getElementById("graficaDibujo");
 		}
 
 		switch (fallos) {
@@ -139,55 +181,22 @@ function keyFunction(event)
 				break;
 		}
 
-		if(fallos === 9){
-		mensajeDerrota.style.visibility = "visible";
+		if(fallos === 9)
+		{
+		window.removeEventListener("keydown", funcionTeclado);
+
+		mensajeDeDerrota.style.visibility = "visible";
 		let palabraCorrecta = palabrita.join('');
-		mensajeDerrota.textContent = "Fin Del Juego !! la palabra era "+ palabraCorrecta ;
-		window.removeEventListener('keydown', keyFunction);
+		document.getElementById("palabraFinal").textContent = palabraCorrecta; /*Se usan n para saltos de linea, en alert */ 
 		}
+
 		else if(aciertos == palabrita.length)
 		{
+			window.removeEventListener("keydown", funcionTeclado);
 			mensajeGanador.style.visibility = "visible";
-			window.removeEventListener('keydown', keyFunction);
 		}
 	}
 }
-
-function iniciarJuego() 
-{   
-
-    let recibePalabra = palabraObtenida(numeroAleatorio());
-    console.log(recibePalabra);
-	drawLines(recibePalabra);
-	window.addEventListener('keydown', keyFunction);
-}
-
-
-function reiniciar()
-{
-	aciertos = 0;
-	fallos = 0;
-	letrasIngresadas = [];
-	graficaDibujo.style.visibility = "visible";
-	letrasAcertadas.style.visibility = "visible";
-	palabrasEquivocadas.style.visibility = "visible";
-	letrasAcertadas.innerHTML = "";
-	palabrasEquivocadas.innerHTML = "";
-	let recibePalabra = palabraObtenida(numeroAleatorio());
-	drawLines(recibePalabra);
-	window.addEventListener('keydown', keyFunction);
-    console.log(recibePalabra);
-	document.getElementById("soporte").style.visibility = "collapse";
-	document.getElementById("viga").style.visibility = "collapse";
-	document.getElementById("cabeza").style.visibility = "collapse";
-	document.getElementById("soga").style.visibility = "collapse";
-	document.getElementById("torso").style.visibility = "collapse";
-	document.getElementById("brazo-derecho").style.visibility = "collapse";
-	document.getElementById("brazo-izquierdo").style.visibility = "collapse";
-	document.getElementById("pierna-derecha").style.visibility = "collapse";
-	document.getElementById("pierna-izquierda").style.visibility = "collapse";
-}
-
 
 function drawLines(palabra)
 {
@@ -196,9 +205,7 @@ function drawLines(palabra)
 	palabrita.forEach(element => {
 		let palabraDisplay = document.createElement("span");
 		palabraDisplay.classList.add("aciertos");
-		palabraDisplay.setAttribute("id","spanLetras");
+		palabraDisplay.setAttribute("id","span");
 		letrasAcertadas.appendChild(palabraDisplay);
 	});
 }
-
-
