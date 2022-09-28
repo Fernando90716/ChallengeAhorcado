@@ -421,3 +421,77 @@ footer {
     background-color: #8cadca;
     border-color: rgb(10, 20, 113);
 }
+
+/*Diseño responsivo*/
+/*Inicio selección de menú*/
+
+@media screen and (max-width:500px)/*Para una pantalla con maximo de ancho disponible, en este caso 480px, aplicar la configuracion a continuacion*/
+{   
+    main{
+        height: 70%;
+    }
+
+    .botones-juego {
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        height: 100%;
+        margin-top: 0%;
+    }
+
+    #empezar-juego{
+        width: 50%;
+    }
+
+    #menuPalabra{
+        width: 50%;
+    }
+}
+
+/*Pagina del juego*/
+
+@media screen and (max-width:500px) 
+{
+    .juego{
+
+    }
+
+        #graficaDibujo{
+
+        }
+
+        #letrasAcertadas{
+
+        }
+
+            .aciertos{
+
+            }
+
+        #palabrasErradas{
+
+        }
+
+            .fallos{
+
+            }
+
+        #botones-opciones{
+            
+        }
+
+          #retroceder{
+
+          }  
+
+          #nuevo-juego{
+
+          }
+}
+
+/*Menu para agregar palabra*/
+
+@media screen and (max-width:500px) 
+{
+
+}
