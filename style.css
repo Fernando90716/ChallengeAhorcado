@@ -23,10 +23,6 @@ header {
     padding: 0 1em;
 }
 
-main{
-    height: 90%;
-}
-
 .botones-juego {
     height: 100%;
     justify-content: center;
@@ -107,7 +103,7 @@ footer {
 }
 
 #graficaDibujo {
-    height: 60%;
+    height: 290px;
     justify-content: center;
     align-items: end;
     display: block;
@@ -121,7 +117,7 @@ footer {
     display: block;
     position: absolute;
     bottom: 0;
-    left: calc(50% - 15%);
+    left: 479px;
 }
 
 #soporte {
@@ -142,7 +138,7 @@ footer {
     background-color: #0A3871;
     visibility: collapse;
     position: absolute;
-    bottom: calc(6px + 85%);
+    bottom: 217px;
     left: 576px;
 }
 
@@ -153,7 +149,7 @@ footer {
     background-color: #0A3871;
     visibility: collapse;
     position: absolute;
-    bottom: calc(70% + 8px);
+    bottom: 185px;
     left: 781px;
 }
 
@@ -165,16 +161,16 @@ footer {
     border-radius: 50%;
     position: absolute;
     left: 761px;
-    bottom: calc(70% - 15% + 3px);
+    bottom: 142px
 }
 
 #torso {
-    height: 20%;
+    height: 58px;
     border: 3px solid #0A3871;
     background-color: #0A3871;
     visibility: collapse;
     position: absolute;
-    bottom: 35%;
+    bottom: 80px;
     left: 781px;
 }
 
@@ -185,7 +181,7 @@ footer {
     visibility: collapse;
     position: absolute;
     left: 772px;
-    bottom: 40.1%;
+    bottom: 100px;
     transform: rotate(25deg);
 }
 
@@ -196,7 +192,7 @@ footer {
     visibility: collapse;
     position: absolute;
     left: 790px;
-    bottom: 40.1%;
+    bottom: 100px;
     transform: rotate(-25deg);
 }
 
@@ -207,7 +203,7 @@ footer {
     visibility: collapse;
     position: absolute;
     left: 791px;
-    bottom: 21%;
+    bottom: 42px;
     transform: rotate(-25deg);
 }
 
@@ -218,7 +214,7 @@ footer {
     visibility: collapse;
     position: absolute;
     left: 772px;
-    bottom: 21%;
+    bottom: 42px;
     transform: rotate(25deg);
 }
 
@@ -240,7 +236,7 @@ footer {
     color: #0A3871;
     font-size: 56px;
     font-family: 'Inter', sans-serif;
-    margin-top: 5%;
+    margin-top: 2%;
 }
 
 .aciertos {
@@ -264,7 +260,7 @@ footer {
     color: #495057;
     font-size: 46px;
     font-family: 'Inter', sans-serif;
-    margin-top: 3%;
+    margin-top: 1%;
 }
 
 .fallos {
