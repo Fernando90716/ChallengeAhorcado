@@ -443,11 +443,13 @@ footer {
     }
 
     #empezar-juego{
-        width: 50%;
+        width: 65%;
+        font-size: 1.5em;
     }
 
     #menuPalabra{
-        width: 50%;
+        width: 65%;
+        font-size: 1.5em;
     }
 }
 
@@ -484,11 +486,11 @@ footer {
         }
 
           #retroceder{
-
+            width: 40%;
           }  
 
           #nuevo-juego{
-
+            width: 40%;
           }
 }
 
