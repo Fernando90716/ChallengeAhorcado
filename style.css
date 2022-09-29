@@ -505,9 +505,23 @@ footer {
     #nuevaPalabra{
 
     }
+    #escribirPalabra{
+        width: 90%;
+        height: 30%;
+    }
 
     .espacio-botones{
+        margin-top: 0%;
+    }
 
+    #botonEnviar{
+        margin-right: 0.5em;
+        width: 40%;
+    }
+
+    #retroceder2{
+        margin-left: 0.5em;
+        width: 40%;
     }
 }
 
