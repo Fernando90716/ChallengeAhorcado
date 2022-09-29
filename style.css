@@ -497,6 +497,17 @@ footer {
 
 @media screen and (max-width:500px) 
 {
+    #menuNuevaPalabra{
+    text-align: center;
+    height: 20%;
+    }
 
+    #nuevaPalabra{
+
+    }
+
+    .espacio-botones{
+
+    }
 }
 
