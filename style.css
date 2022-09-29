@@ -317,7 +317,7 @@ footer {
     transition: 100ms border-color background-color;
 }
 
-#nuevo-juego:hover{
+#nuevo-juego:hover {
     transform: scale(1.05);
 }
 
@@ -333,12 +333,16 @@ footer {
     height: 100%;
 }
 
-#nuevaPalabra{
+#nuevaPalabra {
     height: 80%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+#virtual-keyboard {
+    display: none;
 }
 
 #escribirPalabra {
@@ -364,7 +368,6 @@ footer {
 
 .espacio-botones {
     text-align: center;
-    width: 80%;
     margin-top: 2em;
 }
 
@@ -457,7 +460,7 @@ footer {
     }
 
         #graficaDibujo{
-
+            display: none;
         }
 
         #letrasAcertadas{
@@ -489,9 +492,11 @@ footer {
           }
 }
 
+
 /*Menu para agregar palabra*/
 
 @media screen and (max-width:500px) 
 {
 
 }
+

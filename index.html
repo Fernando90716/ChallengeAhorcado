@@ -7,6 +7,20 @@
     <link rel="stylesheet" href="reset.css">
     <title>El ahorcado</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+    <script>
+    $(document).ready(function(){
+        $("#virtual-keyboard a").on('click', function() {
+            if ($(this).attr('data') == 'DEL') {
+                pizarra_text = $('textarea.pizarra').text();
+                pizarra_text = pizarra_text.substring(0, pizarra_text.length-1);
+                $('textarea.pizarra').text(pizarra_text);
+            } else {
+                $('textarea.pizarra').text($('textarea.pizarra').text() + $(this).attr('data'));
+            }
+        });
+    });
+    </script>
 </head>
 <body>
     <header>
@@ -62,10 +76,49 @@
 
         <div id="menuNuevaPalabra">
             <div id="nuevaPalabra">
-                <input type="text" placeholder="Escribe una palabra para añadir" id="escribirPalabra">
+                <textarea placeholder="Escribe una palabra para añadir" id="escribirPalabra" class="pizarra"></textarea>    
+            </div>
                 <div class="espacio-botones">
                     <input type="submit" value="Enviar" onclick="sumarPalabra()" id="botonEnviar">
                     <input type="button" value="Volver atras" id="retroceder2" onclick="pantallaInicio()">
+                </div>
+                <div id="virtual-keyboard">
+                    <div class="keyboard-row">
+                        <a href="#" data="Q">Q</a>
+                        <a href="#" data="W">W</a>
+                        <a href="#" data="E">E</a>
+                        <a href="#" data="R">R</a>
+                        <a href="#" data="T">T</a>
+                        <a href="#" data="Y">Y</a>
+                        <a href="#" data="U">U</a>
+                        <a href="#" data="I">I</a>
+                        <a href="#" data="O">O</a>
+                        <a href="#" data="P">P</a>
+                    </div>
+                    <div class="keyboard-row">
+                        <a href="#" data="A">A</a>
+                        <a href="#" data="S">S</a>
+                        <a href="#" data="D">D</a>
+                        <a href="#" data="F">F</a>
+                        <a href="#" data="G">G</a>
+                        <a href="#" data="H">H</a>
+                        <a href="#" data="J">J</a>
+                        <a href="#" data="K">K</a>
+                        <a href="#" data="L">L</a>
+                        <a href="#" data="Ñ">Ñ</a>
+                    </div>
+                    <div class="keyboard-row">
+                        <a href="#" data="Z">Z</a>
+                        <a href="#" data="X">X</a>
+                        <a href="#" data="C">C</a>
+                        <a href="#" data="V">V</a>
+                        <a href="#" data="B">B</a>
+                        <a href="#" data="N">N</a>
+                        <a href="#" data="M">M</a>
+                    </div>
+                    <div class="keyboard-row">
+                        <a href="#" data="DEL">ELIMINAR</a>
+                    </div>
                 </div>
             </div>
         </div>
